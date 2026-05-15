@@ -10,7 +10,7 @@ const timelineData = [
     date: 'May 2025',
     title: 'The Beginning',
     description:
-      'You were 21, searching for guidance in digital skills. I was just someone ready to help. Neither of us knew that a simple mentorship message would become the start of something beautiful.',
+      'You were 21, searching for guidance in digital skills. I was just someone ready to help. Neither of us knew that a simple mentorship message would become the start of something solid and Impactful.',
     icon: Sparkles,
     side: 'left' as const,
   },
@@ -18,15 +18,15 @@ const timelineData = [
     date: 'June 2025',
     title: 'First Classes',
     description:
-      'Google Meet sessions filled with explanations, examples, and that adorable confused look you tried to hide. You were determined, focused, and already showing signs of the brilliant woman you\'d become.',
+      'Google Meet sessions filled with explanations, examples, and that adorable confused voice you tried to straighten up. You were determined, focused, and already showing signs of the brilliant lady you\'d become.',
     icon: BookOpen,
     side: 'right' as const,
   },
   {
     date: 'July 2025',
-    title: 'Late Night Calls',
+    title: 'The debateful Calls',
     description:
-      'The classes ended but the conversations didn\'t. We started talking about life, dreams, fears, and everything in between. Those late-night calls became the highlight of my days.',
+      'The classes ended but the conversations didn\'t. We started talking about life, dreams, fears, and everything in between. Those wisdomful calls became the highlight of my days.',
     icon: PhoneCall,
     side: 'left' as const,
   },
@@ -34,15 +34,15 @@ const timelineData = [
     date: 'August 2025',
     title: 'Growing Closer',
     description:
-      'From mentorship to friendship — a transition so natural it felt like it was always meant to be. You shared your world with me, and I found myself wanting to be part of it.',
+      'From mentorship to friendship, a transition so natural it felt like it was always meant to be. You shared your world with me, and I found myself wanting to be part of it.',
     icon: Heart,
     side: 'right' as const,
   },
   {
     date: 'September 2025',
-    title: 'The Teasing Begins',
+    title: 'The honesty Begins',
     description:
-      'The flirting, the inside jokes, the witty comebacks — you matched my energy perfectly. Your intelligence shines through every teasing remark, making me smile at my phone like an idiot.',
+      'The inside jokes, the witty comebacks, you matched my energy perfectly. Your intelligence shines through every teasing remark, making me smile at my phone like an idiot.',
     icon: Laugh,
     side: 'left' as const,
   },

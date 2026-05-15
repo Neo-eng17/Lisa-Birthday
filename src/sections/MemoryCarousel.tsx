@@ -8,27 +8,27 @@ gsap.registerPlugin(ScrollTrigger);
 const slides = [
   {
     image: '/lisa-study.png',
-    caption: 'The Dedicated Student',
+    caption: 'Vibrance Beyond Words',
     quote:
-      'This was the beginning — you, determined and focused, ready to conquer the digital world. Even through a screen, your dedication was undeniable.',
+      'You don’t need loud colors to shine, your calm confidence already lit up everything around you.',
   },
   {
     image: '/lisa-calls.png',
-    caption: 'Late Night Conversations',
+    caption: 'Soft Soul with a Strong heart',
     quote:
-      'From mentorship calls to hours of talking about everything and nothing. Those calls became my sanctuary.',
+      'Your eyes hold kindness so genuine, it feels like comfort wrapped in human form; and if eyes are truly the doors to the soul, then yours are the kind that makes hearts curious to enter.',
   },
   {
     image: '/lisa-messages.png',
-    caption: 'Your Beautiful Smile',
+    caption: 'Your Beauty in Simplicity',
     quote:
-      'This smile looked like peace disguised as confidence. Like someone who knows her worth but stays humble about it.',
+      'Carrying elegance so naturally that even silence seemed to admire your presence.',
   },
   {
     image: '/lisa-moon.png',
-    caption: 'Our Digital Constellation',
+    caption: 'Your Beautiful Smile',
     quote:
-      'Two souls connected across distance, building a universe of memories one message at a time.',
+      'This smile looks like peace disguised as confidence. Like someone who knows her worth but stays humble about it.',
   },
 ];
 
@@ -127,7 +127,7 @@ export default function MemoryCarousel() {
           <p className="section-label mb-3">02 • MEMORIES</p>
           <h2 className="section-heading mb-4">Moments That Matter</h2>
           <p className="section-subtext max-w-xl mx-auto">
-            Every photo you shared became a treasure. Every smile, a memory etched in time.
+            Every photo you shared became a file to know you better. Every smile, a memory etched in time.
           </p>
           <div className="w-10 h-[2px] bg-gradient-to-r from-cyan to-transparent mx-auto mt-4" />
         </div>

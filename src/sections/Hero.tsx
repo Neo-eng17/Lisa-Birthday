@@ -131,7 +131,7 @@ export default function Hero() {
               ref={labelRef}
               className="section-label mb-4 opacity-0"
             >
-              May 16, 2026 • A Day the Universe Smiled
+              May 16 • A Day the Universe Smiled
             </p>
 
             <h1
@@ -168,8 +168,8 @@ export default function Hero() {
             >
               To the girl who turned a simple mentorship into the most beautiful friendship. 
               Your intelligence lights up every conversation, your maturity inspires me daily, 
-              and your smile — even through a screen — has the power to brighten my darkest days. 
-              You're not just 22; you're 22 years of pure magic.
+              and your smile, even through a screen has the power to brighten my darkest days. 
+              You're not just 22, you're 22 years of pure magic.
             </p>
 
             <div ref={buttonsRef} className="flex flex-wrap gap-4 justify-center lg:justify-start opacity-0">

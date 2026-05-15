@@ -6,12 +6,12 @@ import { Phone, GraduationCap, Plane, Trophy, Camera, Heart } from 'lucide-react
 gsap.registerPlugin(ScrollTrigger);
 
 const wishes = [
-  { icon: Phone, text: 'More late-night calls that turn into early mornings' },
+  { icon: Phone, text: 'Beautiful experiences, meaningful conversations, and days that leave us smiling long after they end.' },
   { icon: GraduationCap, text: "Watching you achieve every academic goal you set" },
   { icon: Plane, text: 'The day we finally meet in person (it\'s coming)' },
   { icon: Trophy, text: 'Seeing you become the successful woman you\'re destined to be' },
   { icon: Camera, text: 'Creating real memories beyond screens and messages' },
-  { icon: Heart, text: 'Another year of friendship, laughter, and growing together' },
+  { icon: Heart, text: 'More years of friendship, laughter, and growing together' },
 ];
 
 export default function FutureWishes() {

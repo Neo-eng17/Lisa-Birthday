@@ -6,15 +6,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 const letterContent = `One year ago, you were a stranger with a hunger to learn. Today, you're one of the most important people in my life. Funny how the universe works, isn't it?
 
-I've watched you grow from a curious 21-year-old into this incredible 22-year-old woman. I've seen your determination when things get hard. I've heard your laughter through late-night calls. I've read your messages that somehow always know exactly what I need to hear.
+I've watched you grow from a curious 21-year-old into this incredible 22-year-old lady. I've seen your determination when things get hard. I've heard your laughter through calls. I've read your messages that somehow always are precise and carefully crafted with clarity of what need to be said.
 
-You are intelligent in a way that makes every conversation a journey. Mature beyond your years, yet never too serious to laugh at yourself. Emotionally aware — you feel deeply, and that is your superpower. Your standards are high because you know your worth, and that respect you demand? You give it tenfold to everyone around you.
+You are intelligent in a way that makes every conversation a journey of thought, growth and belief shaking sometimes. Mature beyond your years, yet never too serious to laugh or despise others. Emotionally aware, bytha Lisa, you feel deeply, and that is both your superpower and limitation. Your standards are high because you know your worth, and that respect you demand? You give it back ten times to everyone around you.
 
 We've never stood in the same room. Never shared a meal face-to-face. But I know you. I know the way your mind works, the way your heart feels, the way your spirit shines. And I am endlessly grateful that our paths crossed.
 
 Happy Birthday, Lisa. May 22 be the year that gives you everything 21 promised and more. May your dreams grow bigger, your laughter grow louder, and your heart remain as beautiful as it has always been.
 
-The world is better with you in it. Never forget that.`;
+The world is better with you in it. Never forget that 📌.`;
 
 const PAUSE_CHARS = ['?', '.', '!'];
 const PAUSE_DURATION = 600; // ms
@@ -102,7 +102,7 @@ export default function DigitalLetter() {
         {/* Heading */}
         <div className="letter-heading text-center mb-12 opacity-0">
           <p className="section-label mb-3">05 • A LETTER TO YOU</p>
-          <h2 className="section-heading mb-4">Words I Never Said</h2>
+          <h2 className="section-heading mb-4">Words I could have whispered</h2>
           <p className="section-subtext max-w-xl mx-auto">
             Some things take time to find the right words. These are yours.
           </p>
@@ -150,7 +150,7 @@ export default function DigitalLetter() {
                 With all my admiration,
               </p>
               <p className="font-accent text-xl text-cyan">
-                Your friend, forever 💙
+                Nomic 💙
               </p>
             </div>
           )}

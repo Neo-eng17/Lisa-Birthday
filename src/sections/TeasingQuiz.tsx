@@ -34,15 +34,15 @@ const questions: Question[] = [
     options: [
       { label: 'A', text: 'She cares too much' },
       { label: 'B', text: "She can't resist a good meme" },
-      { label: 'C', text: 'Her smile — it disarms everyone' },
-      { label: 'D', text: 'She pretends not to blush over compliments' },
+      { label: 'C', text: 'Her smile, it disarms everyone' },
+      { label: 'D', text: 'She replies weirdly to compliments 😬' },
     ],
     bestAnswer: 3,
     responses: [
       'True, but that\'s not a weakness — that\'s your superpower.',
       'Who can resist a good meme though? Not a weakness in my book.',
       'That smile is dangerous, I\'ll admit. But there\'s something even more telling...',
-      'Caught you! You can deny it all you want, but I know that blush is real. And it\'s absolutely adorable.',
+      'Caught you! You can deny it all you want, but I know that you reply with merry christmas. And it drives me mad 🤣.',
     ],
   },
   {
@@ -58,20 +58,20 @@ const questions: Question[] = [
       'Mysterious? Yes. But you\'re much more than just mystery.',
       'Beautiful and warm fits, but there\'s a time that captures you even better.',
       '3 AM Lisa — when walls come down, truths come out, and conversations become memories. That\'s when your brilliance truly shines.',
-      'Hopeful? Absolutely. But you\'re more of a night owl than an early bird, admit it!',
+      'Absolutely. But you\'re more of a resilient and stubborn finder, admit it!',
     ],
   },
   {
     question: 'What does Lisa do when she\'s nervous?',
     options: [
-      { label: 'A', text: "Types 'lol' way too much" },
+      { label: 'A', text: "Types 'bossy' way too much" },
       { label: 'B', text: 'Changes the subject cleverly' },
       { label: 'C', text: 'Asks more questions to deflect' },
       { label: 'D', text: 'All of the above, simultaneously' },
     ],
     bestAnswer: 3,
     responses: [
-      'lol haha lol — yeah, I\'ve noticed 😂',
+      'Oh! My — yeah, I\'ve noticed 😂',
       'You\'re smooth with it, but I always catch the pivot!',
       'Classic Lisa defense mechanism — when in doubt, ask a question!',
       'The full Lisa nervous package! It\'s actually endearing how transparent you are. Don\'t worry, your secret is safe with me.',
@@ -85,7 +85,7 @@ const questions: Question[] = [
       { label: 'C', text: 'The way she makes people feel seen' },
       { label: 'D', text: 'All of it. Every single part.' },
     ],
-    bestAnswer: 3,
+    bestAnswer: 4,
     responses: [
       'Her intelligence is remarkable, but that\'s just one piece of the puzzle.',
       'Her heart is beautiful, yet there\'s even more to you than that.',
@@ -214,7 +214,7 @@ export default function TeasingQuiz() {
           <p className="section-label mb-3">04 • PLAYGROUND</p>
           <h2 className="section-heading mb-4">The Lisa Quiz</h2>
           <p className="section-subtext max-w-xl mx-auto">
-            How well do you know her? Let's find out.
+            How well do you know YOU? Let's find out.
           </p>
           <div className="w-10 h-[2px] bg-gradient-to-r from-cyan to-transparent mx-auto mt-4" />
         </div>

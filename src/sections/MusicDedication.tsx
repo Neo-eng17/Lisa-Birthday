@@ -7,50 +7,52 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function MusicDedication() {
   const sectionRef = useRef<HTMLElement>(null);
+  const audioRef = useRef<HTMLAudioElement>(null);
+  
   const [isPlaying, setIsPlaying] = useState(false);
   const [active, setActive] = useState(false);
 
+  // Audio Control
+ const togglePlay = () => {
+  const audio = audioRef.current;
+  if (!audio) {
+    console.error("Audio ref is null");
+    return;
+  }
+
+  if (isPlaying) {
+    audio.pause();
+    setIsPlaying(false);
+  } else {
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          setIsPlaying(true);
+        })
+        .catch((err) => {
+          console.error("Play failed:", err);
+          setIsPlaying(false);
+        });
+    }
+  }
+};
+
+  // GSAP Animations
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        '.music-heading',
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1, y: 0, duration: 0.8, ease: 'power3.out',
-          scrollTrigger: { trigger: '.music-heading', start: 'top 85%' },
-        }
+      gsap.fromTo('.music-heading', 
+        { opacity: 0, y: 40 }, 
+        { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: '.music-heading', start: 'top 85%' }}
       );
-      gsap.fromTo(
-        '.music-card',
-        { opacity: 0, scale: 0.95 },
-        {
-          opacity: 1, scale: 1, duration: 1, ease: 'power3.out',
-          scrollTrigger: { trigger: '.music-card', start: 'top 80%' },
-        }
-      );
-      gsap.fromTo(
-        '.vinyl-record',
-        { opacity: 0, rotate: -30 },
-        {
-          opacity: 1, rotate: 0, duration: 1.2, ease: 'power3.out',
-          scrollTrigger: { trigger: '.vinyl-record', start: 'top 80%' },
-        }
-      );
-      gsap.fromTo(
-        '.track-info',
-        { opacity: 0, x: 20 },
-        {
-          opacity: 1, x: 0, duration: 0.8, ease: 'power2.out',
-          scrollTrigger: { trigger: '.track-info', start: 'top 85%' },
-        }
+      gsap.fromTo('.music-card', 
+        { opacity: 0, scale: 0.95 }, 
+        { opacity: 1, scale: 1, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: '.music-card', start: 'top 80%' }}
       );
     }, sectionRef);
+
     return () => ctx.revert();
   }, []);
-
-  useEffect(() => {
-    setActive(isPlaying);
-  }, [isPlaying]);
 
   return (
     <section
@@ -81,32 +83,20 @@ export default function MusicDedication() {
               <div
                 className={`w-48 h-48 lg:w-60 lg:h-60 rounded-full relative ${isPlaying ? 'animate-spin-slow' : ''}`}
                 style={{
-                  background: `
-                    repeating-radial-gradient(
-                      circle at center,
-                      #0a0a0a 0px,
-                      #0a0a0a 2px,
-                      #1a1a1a 3px,
-                      #1a1a1a 4px
-                    )
-                  `,
+                  background: `repeating-radial-gradient(circle at center, #0a0a0a 0px, #0a0a0a 2px, #1a1a1a 3px, #1a1a1a 4px)`,
                   boxShadow: '0 0 40px rgba(0, 212, 255, 0.3)',
                 }}
               >
-                {/* Label */}
                 <div
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 lg:w-24 lg:h-24 rounded-full flex items-center justify-center"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(0,212,255,0.8), rgba(0,150,255,0.6))',
-                  }}
+                  style={{ background: 'linear-gradient(135deg, rgba(0,212,255,0.8), rgba(0,150,255,0.6))' }}
                 >
                   <span className="font-display font-bold text-white text-sm lg:text-base">LISA</span>
                 </div>
-                {/* Center hole */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-cosmic-deep" />
               </div>
 
-              {/* Visualizer bars around record */}
+              {/* Visualizer */}
               <div className="absolute inset-0 pointer-events-none">
                 {[...Array(12)].map((_, i) => {
                   const angle = (i * 30 * Math.PI) / 180;
@@ -134,24 +124,24 @@ export default function MusicDedication() {
             {/* Track Info */}
             <div className="track-info text-center md:text-left flex-1">
               <p className="text-sm italic mb-4" style={{ color: 'rgba(255, 255, 255, 0.5)' }}>
-                "This song reminded me of you."
+                "This song says it better, ebu skia."
               </p>
 
               <h3 className="font-display text-3xl lg:text-4xl font-bold text-white mb-2">
-                Perfect
+                Wema 
               </h3>
               <p className="text-base mb-4" style={{ color: 'rgba(255, 255, 255, 0.7)' }}>
-                Ed Sheeran
+                Nk Njoroge ft Fedora
               </p>
 
               <p className="font-accent text-xl text-cyan mb-6">
-                "Darling, you look perfect tonight."
+                "Met you by chance..."
               </p>
 
               {/* Play Button */}
               <button
-                onClick={() => setIsPlaying(!isPlaying)}
-                className="w-14 h-14 rounded-full flex items-center justify-center mx-auto md:mx-0 transition-all hover:scale-110"
+                onClick={togglePlay}
+                className="w-14 h-14 rounded-full flex items-center justify-center mx-auto md:mx-0 transition-all hover:scale-110 active:scale-95"
                 style={{
                   background: 'rgba(0, 212, 255, 0.2)',
                   border: '1px solid rgba(0, 212, 255, 0.5)',
@@ -169,10 +159,30 @@ export default function MusicDedication() {
         </div>
       </div>
 
+      {/* Hidden Audio Element */}
+<audio
+  ref={audioRef}
+  src="/music/lisa-song.mp3"
+  onEnded={() => setIsPlaying(false)}
+  onError={(e) => {
+    console.error("Audio Error:", e);
+    console.error("Audio Src:", e.currentTarget.src);
+    alert("Audio failed to load. Check console for details.");
+  }}
+/>  
+      
+
       <style>{`
         @keyframes pulse {
           from { height: 8px; }
           to { height: 32px; }
+        }
+        .animate-spin-slow {
+          animation: spin 25s linear infinite;
+        }
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
         }
       `}</style>
     </section>
