@@ -10,7 +10,7 @@ export default function MusicDedication() {
   const audioRef = useRef<HTMLAudioElement>(null);
   
   const [isPlaying, setIsPlaying] = useState(false);
-  const [active, setActive] = useState(false);
+  const active = isPlaying;
 
   // Audio Control
  const togglePlay = () => {
