@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 216 50% 4%;
+    --foreground: 0 0% 100%;
+    --card: 216 50% 6%;
+    --card-foreground: 0 0% 100%;
+    --popover: 216 50% 6%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 195 100% 50%;
+    --primary-foreground: 216 50% 4%;
+    --secondary: 216 30% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 216 30% 15%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 340 80% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 195 100% 50% / 0.2;
+    --input: 216 30% 15%;
+    --ring: 195 100% 50%;
+    --radius: 0.75rem;
+
+    --color-bg-deep: #060B14;
+    --color-bg-mid: #0A1628;
+    --color-surface: rgba(10, 22, 40, 0.6);
+    --color-surface-light: rgba(20, 40, 70, 0.4);
+    --color-cyan-primary: #00D4FF;
+    --color-cyan-bright: #33DDFF;
+    --color-cyan-dim: rgba(0, 212, 255, 0.15);
+    --color-cyan-border: rgba(0, 212, 255, 0.3);
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: rgba(255, 255, 255, 0.7);
+    --color-text-muted: rgba(255, 255, 255, 0.45);
+    --color-heart: #FF6B9D;
+    --color-heart-glow: rgba(255, 107, 157, 0.3);
+    --color-star: #FFE4A1;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--color-bg-deep);
+    color: var(--color-text-primary);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .font-accent {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  .glass-card {
+    background: rgba(10, 22, 40, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .glass-card:hover {
+    border-color: rgba(0, 212, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 212, 255, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .btn-cyan {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(0, 150, 255, 0.1));
+    border: 1px solid rgba(0, 212, 255, 0.4);
+    color: white;
+    font-weight: 500;
+    padding: 14px 32px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .btn-cyan:hover {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.25), rgba(0, 150, 255, 0.2));
+    border-color: rgba(0, 212, 255, 0.7);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+    transform: scale(1.02);
+  }
+
+  .btn-outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    padding: 14px 32px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--color-cyan-primary);
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+  }
+
+  .text-gradient-cyan {
+    background: linear-gradient(135deg, #ffffff 0%, #00D4FF 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+  }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-cyan-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .section-heading {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: white;
+    line-height: 1.15;
+  }
+
+  .section-subtext {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  .animate-bounce-subtle {
+    animation: bounce-subtle 2s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin 3s linear infinite;
+  }
+
+  .animate-border-shimmer {
+    animation: border-shimmer 4s linear infinite;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+  }
+}
+
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes border-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
